@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="shadow"> 
+<h1 style="background-color: bisque;" class="mx-5"><h1 >CRUD USING MONGODB</h1></h1>
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>title</mat-label>
+      <input matInput #title value="">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>Description</mat-label>
+      <textarea #description matInput ></textarea>
+    </mat-form-field>
+      <!-- <mat-slide-toggle>Slide me!</mat-slide-toggle> -->
+     
+      <button class="btn btn-primary" (click)="onsumbit(title.value,description.value)">Add data</button>
+  </form>
+  </div>
+</div>
+  <div class="container">
+    <div class="shadow">
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">title</th>
+            <th scope="col">description</th>
+            <th scope="col">Delete</th>
+            <th scope="col">Update</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let i of data">
+            <th scope="row">{{i.title}}</th>
+        <th>{{i.description}}</th>
+        <th> <button class="btn btn-primary" (click)="deletedata(i._id)">delete</button></th>
+        <th> <button class="btn btn-primary" (click)="update(i)">update</button></th>
+          </tr>
+         
+        </tbody>
+      </table>
+    </div>
+  </div>
